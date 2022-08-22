@@ -87,5 +87,32 @@ namespace REGEX_UserRegistration
                 Console.ResetColor();
             }
         }
+
+        //UC4
+
+        public void ValidPhNumber()
+        {
+            Console.WriteLine("Please Enter Phone Number :");
+            string data = Console.ReadLine();
+
+            string pattern = "^[0-9]{2}[ ][6-9]{1}[0-9]{9}$";
+
+            //creating object of the Regex superclass
+
+            Regex regobj = new Regex(pattern);
+
+            if (regobj.IsMatch(data))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Phone Number is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Phone Number is Invalid");
+                Console.ResetColor();
+            }
+        }
     }
 }
