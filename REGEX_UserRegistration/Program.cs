@@ -8,10 +8,11 @@ namespace REGEX_UserRegistration
         {
 
             Console.WriteLine("Welcome to REGEX User Registration Problem");
-
+            Start:
             Console.WriteLine("Select Options Please :\n" +
                 "1)Enter First Name\n" +
-                "2)Enter Last Name\n");
+                "2)Enter Last Name\n" + 
+                "3)Enter E-Mail Address\n");
 
             int option = Convert.ToInt32(Console.ReadLine());          
 
@@ -31,10 +32,18 @@ namespace REGEX_UserRegistration
                     user1.ValidLastName();
                     break;
 
+                case 3:
+                    UserRegistration user2 = new UserRegistration();
+                    Console.WriteLine(":::::::::::::::::::::::::::::::");
+                    user2.ValidEmail();
+                    break;
+
+
                 default:
                     Console.WriteLine("Choose Proper options");
                     break;
             }
+            goto Start;
         }
     }
 }

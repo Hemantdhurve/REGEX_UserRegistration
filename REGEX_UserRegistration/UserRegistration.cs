@@ -60,5 +60,32 @@ namespace REGEX_UserRegistration
                 Console.ResetColor();
             }
         }
+
+        //UC3
+
+        public void ValidEmail()
+        {
+            Console.WriteLine("Please Enter Email :");
+            string data = Console.ReadLine();
+
+            string pattern = "^[a-zA-z]{3,}([.][a-zA-Z]{3,})[@][a-z]{2}[.][a-z]{2}([.][a-z]{2})$";
+
+            //creating object of the Regex superclass
+
+            Regex regobj = new Regex(pattern);
+
+            if (regobj.IsMatch(data))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Email is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Email is Invalid");
+                Console.ResetColor();
+            }
+        }
     }
 }
