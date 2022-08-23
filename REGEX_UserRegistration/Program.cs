@@ -17,7 +17,8 @@ namespace REGEX_UserRegistration
                 "5)Enter Password Rule No. 1\n" +
                 "6)Enter Password Rule No. 2\n" +
                 "7)Enter Password Rule No. 3\n" +
-                "8)Enter Password Rule No. 4\n");
+                "8)Enter Password Rule No. 4\n" +
+                "9)Enter Sample Emails\n");
 
             int option = Convert.ToInt32(Console.ReadLine());          
 
@@ -76,6 +77,13 @@ namespace REGEX_UserRegistration
                     UserRegistration user7 = new UserRegistration();
                     Console.WriteLine(":::::::::::::::::::::::::::::;::");
                     user7.ValidPasswordRule4();
+                    break;
+
+                case 9:
+
+                    UserRegistration user8 = new UserRegistration();
+                    Console.WriteLine(":::::::::::::::::::::::::::::;::");
+                    user8.ValidSampleEmail();
                     break;
 
 
