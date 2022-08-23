@@ -149,9 +149,7 @@ namespace REGEX_UserRegistration
             Console.WriteLine("Please Enter Password Rule 2 :");
             string data = Console.ReadLine();
 
-            string pattern = "^(?=.*[A-Z])[a-zA-Z]{8,}$";
-
-            //creating object of the Regex superclass
+            string pattern = "^(?=.*[A-Z])[a-zA-Z]{8,}$";                      //(?=.*)  Look Ahead used for at least one time            //creating object of the Regex superclass
 
             Regex regobj = new Regex(pattern);
 
@@ -192,6 +190,33 @@ namespace REGEX_UserRegistration
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Password Rule 3 Invalid");
+                Console.ResetColor();
+            }
+        }
+
+        //UC8
+
+        public void ValidPasswordRule4()
+        {
+            Console.WriteLine("Please Enter Password Rule 4 :");
+            string data = Console.ReadLine();
+
+            string pattern= "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
+
+            //creating object of the Regex superclass
+
+            Regex regobj = new Regex(pattern);
+
+            if (regobj.IsMatch(data))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Password Rule 4 is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Password Rule 4 Invalid");
                 Console.ResetColor();
             }
         }
